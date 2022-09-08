@@ -10,6 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_09_08_203609) do
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "instructions"
+    t.integer "personal_trainer_id"
+    t.integer "routine_id"
+  end
+
+  create_table "personal_trainers", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+  end
+
+  create_table "routines", force: :cascade do |t|
+    t.string "routine_name"
+    t.string "muscle_group"
+    t.integer "personal_trainer_id"
+    t.string "routine_image"
+  end
 
 end
